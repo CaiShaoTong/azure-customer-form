@@ -5,6 +5,12 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         name = request.form.get("name")
-        message = request.form.get("message")
-        return f"<h2>謝謝您的留言，{name}！</h2><p>{message}</p>"
+        email = request.form.get("email")
+        description = request.form.get("description")
+        return f"""
+            <h2>感謝您的回報，{name}！</h2>
+            <p>我們已收到您的問題描述：</p>
+            <p><strong>Email:</strong> {email}</p>
+            <p><strong>內容:</strong> {description}</p>
+        """
     return render_template("form.html")
