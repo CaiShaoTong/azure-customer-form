@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <title>客服問題回報表單</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(-45deg, #d1d1ff, #c1f0f6, #ffe3e3, #e0ffe0);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      width: 400px;
+      animation: fadeIn 1s ease;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #5a90e0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3c70d2;
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
     <h2>客服問題回報表單</h2>
     <form method="POST">
-      姓名：<input type="text" name="name"><br>
-      E-mail：<input type="email" name="email"><br>
+      姓名：<input type="text" name="name" required><br>
+      E-mail：<input type="email" name="email" required><br>
       問題描述：<br>
-      <textarea name="description" rows="5" cols="40"></textarea><br>
+      <textarea name="description" rows="5" required></textarea><br>
       <input type="submit" value="送出">
     </form>
-  </body>
+  </div>
+</body>
 </html>
